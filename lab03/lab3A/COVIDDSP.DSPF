@@ -1,0 +1,75 @@
+000001210130     A          R RISKFACTOR
+000002210130     A                                  1  2USER
+000003210130     A                                  3  2'Guilherme Matsumoto Tommasini'
+000004210130     A                                  1 72DATE
+000005210130     A                                      EDTCDE(Y)
+000006210130     A                                  1 22'C O V I D 19   R I S K   F A C T O-
+000007210130     A                                       R S'
+000009210130     A                                  5  3'Birth Date:'
+000010210130     A                                  5 33'Gender:'
+000011210130     A                                  5 45'M/F'
+000012210130     A            BIRTHDATE       L  B  5 15
+000013210130     A            GENDER         1A  B  5 42VALUES('M' 'F')
+000014210130     A  95                                  DSPATR(RI PC)
+000015210130     A  60                                  DSPATR(PR)
+000018210130     /* (RI PC PR) reverse image, position cursor, protected */
+000019210130     A  95                              5 49'Gender must not be blanck'
+000022210130     A                                  7  2'Answer the following with Y or N:'
+000023210130
+000024210130     A                                  9  3'Cardiovascular Disease:'
+000025210130     A            CVDISEASE      1   B  9 27VALUES('Y' 'N')
+000027210130     A  96                                  DSPATR(RI PC)
+000028210130     A  60                                  DSPATR(PR)
+000029210130     A  96                             10  3'Cardiovascular must not be blanck'
+000030210130
+000031210130     A                                  9 46'Diabetes:'
+000032210130     A            DIABETES       1   B  9 57
+000033210130     A                                      VALUES('Y' 'N')
+000034210130     A  97                                  DSPATR(RI PC)
+000035210130     A  60                                  DSPATR(PR)
+000036210130     A  97                             10 46'Diabetes must not be blanck'
+000037210130
+000038210130     A                                 12  3'Respiratory Disease:'
+000039210130     A            RSPDISEASE     1   B 12 27
+000040210130     A                                      VALUES('Y' 'N')
+000041210130     A  98                                  DSPATR(RI PC)
+000042210130     A  60                                  DSPATR(PR)
+000043210130     A  98                             13  3'Respiratory must not be blanck'
+000044210130
+000045210130     A                                 12 36'High Blood Pressure:'
+000046210130     A            HBPRESSURE     1   B 12 57
+000047210130     A                                      VALUES('Y' 'N')
+000048210130     A  99                                  DSPATR(RI PC)
+000049210130     A  60                                  DSPATR(PR)
+000050210130     A  99                             13 36'High Blood Pressure must not be bl-nck'
+000051210130     A                                      ank '
+000052210130
+000053210130     /* ---------------------------------------------- */
+000054210130     A          R RISKASSMNT                CF03(03 'Exit Program')
+000055210130     A                                      OVERLAY
+000056210130     A                                 15 27'R I S K   A S S E S S M E N T'
+000057210130     A                                 17  6'Age'
+000058210130     A            AGE            3  0O 19  6EDTCDE(1)
+000059210130
+000060210130     A                                 17 13'Fatality Rate'
+000061210131     A            FRATE          5Y 3O 19 17TEXT('Fatality rate (percentage)')
+000062210131     A                                      EDTCDE(1)
+000063210130     A                                 19 24'%'
+000064210130
+000065210130     A                                 17 31'Vacination Recomendation'
+000066210130     A                                 19 34'Cohort:'
+000067210130     A            COHORT         9X  O 19 43
+000068210130
+000069210130     A                                 17 62'Total Queries:'
+000070210131     A            TOTALQ         3  0O 19 68EDTCDE(1)
+000071210130
+000072210130     A                                 23  6'F1 - Cohort Information'
+000073210130     A                                 23 41'F3 - Exit'
+000100      
+000101210130     A*%%RS+<record-sequences>
+000102210130     A*%%RS+ <sequence name="Untitled">
+000103210130     A*%%RS+  <device type="display" width="80" height="24" />
+000104210130     A*%%RS+  <record-write record-format="RISKFACTOR" />
+000105210130     A*%%RS+  <record-write record-format="RISKASSMNT" />
+000106210130     A*%%RS+ </sequence>
+000107210130     A*%%RS </record-sequences>
